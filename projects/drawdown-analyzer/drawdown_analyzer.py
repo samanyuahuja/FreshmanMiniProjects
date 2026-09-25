@@ -1,5 +1,7 @@
 """Calculate the largest drawdown in a sequence of portfolio values."""
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 from math import isfinite
 from numbers import Real
