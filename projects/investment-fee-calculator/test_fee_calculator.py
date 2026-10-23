@@ -23,6 +23,9 @@ class FeeCalculatorTests(unittest.TestCase):
             (1_000, -1.0, 0.01, 5),
             (1_000, 0.05, -0.01, 5),
             (1_000, 0.05, 0.01, -1),
+            (float("nan"), 0.05, 0.01, 5),
+            (1_000, float("inf"), 0.01, 5),
+            (1_000, 0.05, float("inf"), 5),
         ]
         for values in invalid_inputs:
             with self.subTest(values=values), self.assertRaises(ValueError):
