@@ -14,6 +14,8 @@ time. Each project has its own instructions and tests.
   evenly while keeping the total exact to the cent.
 - [Moving Average Signal Explainer](projects/moving-average-signal-explainer):
   compares two simple moving averages and identifies a latest-price crossover.
+- [Investment Fee Calculator](projects/investment-fee-calculator): compares
+  compound growth with and without a fixed annual fee.
 
 The projects use standard-library tools where possible, so most can run with a
 normal Python installation.
