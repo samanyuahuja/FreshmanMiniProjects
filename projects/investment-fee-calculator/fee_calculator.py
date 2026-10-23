@@ -1,8 +1,12 @@
 """Compare investment growth with and without an annual fee."""
 
+import math
+
 
 def future_value(principal: float, annual_return: float, years: int) -> float:
     """Return the compounded value of an investment."""
+    if not math.isfinite(principal) or not math.isfinite(annual_return):
+        raise ValueError("amounts and rates must be finite")
     if principal < 0:
         raise ValueError("principal cannot be negative")
     if annual_return <= -1:
@@ -19,6 +23,8 @@ def compare_fee(
     years: int,
 ) -> tuple[float, float, float]:
     """Return values without fees, after fees, and the difference."""
+    if not math.isfinite(annual_fee):
+        raise ValueError("amounts and rates must be finite")
     if annual_fee < 0:
         raise ValueError("annual fee cannot be negative")
     if annual_return - annual_fee <= -1:
