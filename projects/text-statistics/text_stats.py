@@ -4,7 +4,6 @@ from dataclasses import dataclass
 import re
 
 
-WORD_PATTERN = re.compile(r"\b[\w']+\b", re.UNICODE)
 SENTENCE_END_PATTERN = re.compile(r"[.!?]+")
 
 
@@ -27,7 +26,10 @@ def analyze_text(text: str) -> TextStats:
         characters_without_spaces=sum(
             not character.isspace() for character in text
         ),
-        words=len(WORD_PATTERN.findall(text)),
+        words=sum(
+            any(character.isalnum() for character in token)
+            for token in text.split()
+        ),
         sentences=len(SENTENCE_END_PATTERN.findall(text)),
         nonempty_lines=sum(bool(line.strip()) for line in text.splitlines()),
     )
