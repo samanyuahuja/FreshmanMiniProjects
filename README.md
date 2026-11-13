@@ -16,6 +16,8 @@ time. Each project has its own instructions and tests.
   compares two simple moving averages and identifies a latest-price crossover.
 - [Investment Fee Calculator](projects/investment-fee-calculator): compares
   compound growth with and without a fixed annual fee.
+- [Retry Helper](projects/retry-helper): repeats a Python function after an
+  expected failure and stops when it succeeds or runs out of attempts.
 
 The projects use standard-library tools where possible, so most can run with a
 normal Python installation.
